@@ -1,7 +1,13 @@
 import css from "./InputBox.module.css";
-function InputBox() {
-  const handleOnChange = (event) => {
-    console.log(event.target.value);
+import { FaEyeSlash } from "react-icons/fa6";
+
+function InputBox({ username, setuname, password, setupass }) {
+  const handleOnChangeUser = (event) => {
+    let value = event.target.value;
+    setuname(value);
+  };
+  const handleOnChangePass = (event) => {
+    setupass(event.target.value);
   };
 
   return (
@@ -11,7 +17,8 @@ function InputBox() {
           type="text"
           placeholder="Enter UserName"
           className={css.inputBox}
-          onChange={handleOnChange}
+          onChange={handleOnChangeUser}
+          value={username}
         ></input>
       </div>
 
@@ -20,8 +27,10 @@ function InputBox() {
           type="password"
           placeholder="Enter Password"
           className={css.inputBox}
-          onChange={handleOnChange}
+          onChange={handleOnChangePass}
+          value={password}
         ></input>
+        {<FaEyeSlash />}
       </div>
     </>
   );

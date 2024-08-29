@@ -1,15 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-function LoginButton() {
-  const handleOnClick = (event) => {
-    console.log(event);
-  };
+function LoginButton({ showdata, checkUserDetails }) {
   return (
-    <button
-      className="btn btn-success"
-      onClick={(event) => handleOnClick("Login Button Clicked")}
-    >
-      Login
-    </button>
+    <>
+      <button className="btn btn-success" onClick={checkUserDetails}>
+        Login
+      </button>
+    </>
   );
 }
 export default LoginButton;
