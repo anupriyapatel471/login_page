@@ -19,6 +19,7 @@ function InputBox({ username, setuname, password, setupass }) {
           className={css.inputBox}
           onChange={handleOnChangeUser}
           value={username}
+          required
         ></input>
       </div>
 
@@ -29,6 +30,7 @@ function InputBox({ username, setuname, password, setupass }) {
           className={css.inputBox}
           onChange={handleOnChangePass}
           value={password}
+          required
         ></input>
         {<FaEyeSlash />}
       </div>

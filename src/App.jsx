@@ -42,9 +42,9 @@ function App() {
       storedUserData.passwordE === password
     ) {
       setIsLoggedIn(true);
-      alert("login Succesful");
     } else {
       alert("Please enter valid username or password");
+      handleReset();
     }
   };
 
