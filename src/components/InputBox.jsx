@@ -32,7 +32,6 @@ function InputBox({ username, setuname, password, setupass }) {
           value={password}
           required
         ></input>
-        {<FaEyeSlash />}
       </div>
     </>
   );

@@ -7,7 +7,13 @@ import InsertImg from "./components/InsertImg";
 import { useState } from "react";
 import RegisterPage from "./components/RegisterPage";
 import Dashboard from "./components/Dashboard";
+import { Route, Routes } from "react-router-dom";
 
+//import pages
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Profile from "./Pages/Profile";
+import Contact from "./Pages/Contact";
 function App() {
   const storedUserData = JSON.parse(localStorage.getItem("user"));
 
@@ -42,6 +48,7 @@ function App() {
       storedUserData.passwordE === password
     ) {
       setIsLoggedIn(true);
+      alert("login successfully");
     } else {
       alert("Please enter valid username or password");
       handleReset();
@@ -51,7 +58,16 @@ function App() {
   return (
     <>
       {isLoggedIn ? (
-        <Dashboard />
+        <Routes>
+          <Route
+            path="/"
+            element={<Dashboard setCurrentValue={setCurrentValue} />}
+          ></Route>
+          <Route path="/Home" element={<Home />}></Route>
+          <Route path="/About" element={<About />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
+        </Routes>
       ) : currentValue ? (
         <>
           <div>
